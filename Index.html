@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="./css/animate.css">
     <link rel="stylesheet" href="./css/gallery.css">
@@ -13,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Nanum+Gothic:wght@400;700;800&family=Quicksand:wght@300;400;500;600;700&family=Shadows+Into+Light&display=swap"
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
 
     <style>
         a {
@@ -219,19 +221,20 @@
         </div>
         <div class="row">
             <div class="col-md-10" id="contact">
-                <form class="form" action="mailto:Rachael.gladwin@me.com">
-                    Name:<br>
-                    <input type="text" name="fullname" value="Your Name">
-                    <br>
-                    Email:<br>
-                    <input type="text" name="Email" value="Your Email">
-                    <br>
-                    Message:<br>
-                    <textarea name="message" class="col-lg-12" rows="8">
-                                        Type your message here.
-                                        </textarea>
-                    <br>
-                    <input type="submit" value="Submit">
+                <script src="JS/awsapp.js"></script>
+                <form class="form" id="contact-form" method="post">
+                    <h4>Name:</h4>
+                    <input type="text" id="FullNameId" placeholder="Enter name here…" class="form-control" /><br />
+                    <h4>Phone:</h4>
+                    <input type="phone" id="PhoneId" placeholder="Enter phone number" class="form-control" /><br />
+                    <h4>Email:</h4>
+                    <input type="email" id="EmailId" placeholder="Enter email here…" class="form-control" /><br />
+                    <h4>How can I help you?</h4>
+                    <textarea id="MessageId" rows="7" placeholder="Enter your message…"
+                        class="form-control"></textarea><br />
+                    <button onClick="createItem()" type="button" class="btn btn-lg">Submit</button>
+
+                    <!-- onClick="createItem()" -->
                 </form>
             </div>
         </div>
