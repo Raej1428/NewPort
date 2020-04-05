@@ -26,25 +26,42 @@ AWS.config.credentials.get(function (err) {
     });
 });
 
-var docClient = new AWS.DynamoDB.DocumentClient();
-function createItem() {
-    var params = {
-        TableName: "PortfolioForm",
-        Item: {
-            "FullNameId": " ",
-            "PhoneId": " ",
-            "eEmailId": " ",
-            "MessageId": " "
-
+var params = {
+    Item: {
+        "FullNameId": {
+            S: "Someone Possibly Famous"
+        },
+        "EmailId": {
+            S: "NoOneYouKnow@noone.com"
+        },
+        "PhoneId": {
+            N: "0000000000"
+        },
+        "MessageId": {
+            S: "A message regarding visit."
         }
-    };
-    docClient.put(params, function (err, data) {
-        if (err) {
-            console.log("Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2));
-        } else {
-            console.log("PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2));
-            alert("Sent!");
-        }
-    });
+    },
+    ReturnConsumedCapacity: "TOTAL",
+    TableName: "PortfolioForm"
+};
 
-}
+var dynamodb = new AWS.DynamoDB({ apiVersion: '2012-08-10' });
+dynamodb.putItem(params, function (err, data) {
+    if (err) { console.log(err, err.stack); console.log("Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2)); } // an error occurred
+    else {
+        console.log(data); console.log("PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2));
+        alert("Sent!");
+    }
+
+    // successful response
+    /*
+    data = {
+     ConsumedCapacity: {
+      CapacityUnits: 1, 
+      TableName: "Music"
+     }
+    }
+    */
+});
+
+
