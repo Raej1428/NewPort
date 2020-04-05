@@ -21,7 +21,6 @@ body {
     ),
     linear-gradient(127deg, rgba(1, 54, 1, 0.8), rgba(0, 255, 0, 0) 60.71%),
     linear-gradient(336deg, rgba(47, 3, 65, 0.8), rgba(132, 0, 255, 0) 60.71%);
-  height: 300px;
 }
 
 #jtrontext {
@@ -116,3 +115,6 @@ p {
 .container {
   margin-bottom: 60px;
 }
+
+
+

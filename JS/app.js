@@ -1,14 +1,17 @@
+window.onload=getExif;
 
-var nodeArray = [
-    document.querySelector('#cOne'),
-    document.querySelector('#cTwo'),
-    document.querySelector('#cThree'),
-    document.querySelector('#cFour'),
-    document.querySelector('#cFive'),
-    document.querySelector('#cSix'),
-    document.querySelector('#cSeven'),
-    document.querySelector('#cEight')
-];
+function getExif() {
+    var img1 = document.getElementById("img1");
+    EXIF.getData(img1, function() {
+        var allMetaData = EXIF.getAllTags(this);
+        var allMetaDataSpan = document.getElementById("allMetaDataSpan");
+        allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
+    });
 
-
-ScrollReveal().reveal(nodeArray, {interval: 600});
+    var img2 = document.getElementById("img2");
+    EXIF.getData(img2, function() {
+        var allMetaData = EXIF.getAllTags(this);
+        var allMetaDataSpan = document.getElementById("allMetaDataSpan");
+        allMetaDataSpan.innerHTML = JSON.stringify(allMetaData, null, "\t");
+    });
+}

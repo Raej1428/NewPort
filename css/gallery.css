@@ -1,7 +1,7 @@
 #gallery-container {
   position: relative;
   height: 650px;
-  width: 850px;
+  width: 950px;
   padding-top: 10px;
   padding-bottom: 15px;
   margin: 0 auto;
@@ -27,7 +27,7 @@ img.gallery-preview:hover ~ img.gallery-fullsize {
 }
 
 img.gallery-preview {
-  width: 53px;
+  width: 63px;
   padding: 5px;
 }
 

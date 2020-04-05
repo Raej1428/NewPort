@@ -3,19 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="./css/animate.css">
-    <link rel="stylesheet" href="./css/gallery.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link
         href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Nanum+Gothic:wght@400;700;800&family=Quicksand:wght@300;400;500;600;700&family=Shadows+Into+Light&display=swap"
         rel="stylesheet">
+    <script src="JS/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
-
+    <!-- <script src="/path/to/amazon-cognito.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
     <style>
         a {
             color: #1f0429;
@@ -171,39 +180,82 @@
             <div class="col-lg-12">
                 <h1 id="picHeader"> A Picture is Worth a Thousand Words...</h1>
                 <p> If each picture is worth a thousand words, here is a short story for you, about me! </p>
-                <p> - Hover over an image to enlarge it.</p>
             </div>
         </div>
 
-        <div class="col-lg-12">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="parent d-flex justify-content-center">
+                        <img src="./images/favoriteheadshot2m.png" class="img-fluid d-block" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="parent d-flex justify-content-center">
+                        <img src="./images/IMG_0568m.png" class="img-fluid d-block" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="parent d-flex justify-content-center">
+                        <img src="./images/IMG_0576m.png" class="img-fluid d-block" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="parent d-flex justify-content-center">
+                        <img src="./images/IMG_0418m.png" class="img-fluid d-block" id="img1" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="parent d-flex justify-content-center">
+                        <img src="./images/IMG_0236m.png" class="img-fluid d-block" id="img2" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="parent d-flex justify-content-center">
+                        <img src="./images/IMG_1553m.png" class="img-fluid d-block" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- <div class="col-lg-12">
             <div id="gallery-container">
                 <div class="gallery-item">
-                    <img src="./images/favoriteheadshotsmall.png" class="gallery-preview" />
-                    <img src="./images/favoriteheadshot2.png" class="gallery-fullsize" />
+                    <img src="./images/favoriteheadshotsmall.png" class="gallery-preview" alt="Responsive image"/>
+                    <img src="./images/favoriteheadshot2.png" class="gallery-fullsize" alt="Responsive image"/>
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/IMG_0576s.JPG" class="gallery-preview" />
-                    <img src="./images/IMG_0576.JPG" class="gallery-fullsize" />
+                    <img src="./images/IMG_0576s.JPG" class="gallery-preview" alt="Responsive image"/>
+                    <img src="./images/IMG_0576.JPG" class="gallery-fullsize" alt="Responsive image"/>
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/IMG_0568s.JPG" class="gallery-preview" />
-                    <img src="./images/IMG_0568.JPG" class="gallery-fullsize" />
+                    <img src="./images/IMG_0568s.JPG" class="gallery-preview" alt="Responsive image"/>
+                    <img src="./images/IMG_0568.JPG" class="gallery-fullsize" alt="Responsive image" />
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/IMG_0418s.JPG" class="gallery-preview" />
-                    <img src="./images/IMG_0418.JPG" class="gallery-fullsize" />
+                    <img src="./images/IMG_0418s.JPG" class="gallery-preview"  alt="Responsive image"/>
+                    <img src="./images/IMG_0418.JPG" class="gallery-fullsize" alt="Responsive image"/>
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/IMG_0236s.JPG" class="gallery-preview" />
-                    <img src="./images/IMG_0236.JPG" class="gallery-fullsize" />
+                    <img src="./images/IMG_0236s.JPG" class="gallery-preview" alt="Responsive image"/>
+                    <img src="./images/IMG_0236.JPG" class="gallery-fullsize" alt="Responsive image"/>
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/IMG_1553s.JPG" class="gallery-preview" />
-                    <img src="./images/IMG_1553.JPG" class="gallery-fullsize" />
+                    <img src="./images/IMG_1553s.JPG" class="gallery-preview" alt="Responsive image"/>
+                    <img src="./images/IMG_1553.JPG" class="gallery-fullsize" alt="Responsive image"/>
                 </div>
 
             </div>
-        </div>
+        </div> -->
+
+
         <div class="row">
             <div class="col-lg-12">
                 <div id="line">
