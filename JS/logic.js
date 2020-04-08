@@ -21,12 +21,13 @@ $("#submit-form").click(function (event) {
     var phone = $("#email").val().trim();
     var email = $("#phone").val().trim();
     var message = $("#message").val().trim();
+   
 
-    database.ref().set({
-        fullNameId: name,
-        phoneId: phone,
-        emailId: email,
-        messageId: message
+    database.ref('messages').push({
+        fullName: name,
+        phone: phone,
+        email: email,
+        message: message
     }), function (errorObject) {
         console.log("The read failed: " + errorObject.code);
         alert("Message not sent, see console for error.");
@@ -34,6 +35,6 @@ $("#submit-form").click(function (event) {
     }
 
     alert("Message sent!");
- 
+    
 });
 
