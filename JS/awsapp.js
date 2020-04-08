@@ -18,7 +18,7 @@ AWS.config.credentials.get(function (err) {
     var cognitoSyncClient = new AWS.CognitoSync();
     cognitoSyncClient.listDatasets({
         IdentityId: AWS.config.credentials.identityId,
-        IdentityPoolId: "us-east-2:e3a344ed-6a8a-4913-bb5b-1b8e05a5fd53"
+        IdentityPoolId: "arn:aws:cognito-idp:us-east-2:645049789661:userpool/us-east-2_euroGBZRC"
     }, function (err, data) {
         if (!err) {
             console.log(JSON.stringify(data));
