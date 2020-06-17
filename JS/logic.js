@@ -1,5 +1,3 @@
-import "dotenv";
-
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: process.env.apiKey,
