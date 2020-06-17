@@ -1,13 +1,15 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyAghWr1WuGIFliY2NXtRvjd4nJuq9U-Na8",
-    authDomain: "portfolioform-cc3ea.firebaseapp.com",
-    databaseURL: "https://portfolioform-cc3ea.firebaseio.com",
-    projectId: "portfolioform-cc3ea",
-    storageBucket: "portfolioform-cc3ea.appspot.com",
-    messagingSenderId: "546924526258",
-    appId: "1:546924526258:web:a7f508de569871c7aee7ab"
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId
 };
+
+console.log(firebaseConfig);
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
