@@ -1,3 +1,4 @@
+require('dotenv').config();
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: process.env.apiKey,
